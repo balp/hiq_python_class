@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "type": "python-tests",
+            "name": "Test all",
+            "testFramework": "pytest",
+            "target": "test_python",
+            "arguments": [],
+        },
+
+    ]
+}
