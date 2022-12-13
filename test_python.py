@@ -72,7 +72,7 @@ def test_assignment_operatots():
     b |= 0x1
     b ^= 0x6
     b >>= 1
-    b <<=  1
+    b <<= 1
 
 
 def test_lists():
@@ -182,3 +182,39 @@ def test_functions():
             == "Hej, Strategin, Petra, Victor, Jenny, Peter!"
     )
     assert get_well_greeting(wishes="Anders", to="Sara") == "Get well Sara, wishes Anders."
+
+
+def test_lambda():
+    func = lambda x: x * x
+    assert func(2) == 4
+    lista = [1, 2, 3, 4]
+    assert list(map(lambda x: x + 1, lista)) == [2, 3, 4, 5]
+
+
+def test_list_comprehension():
+    fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+    afruit = [x for x in fruits if 'a' in x]
+    assert afruit == ['apple', 'banana', 'orange', 'mango']
+    assert [x for x in range(3)] == [0, 1, 2]
+    assert [x.capitalize() for x in afruit] == ['Apple', 'Banana', 'Orange', 'Mango']
+    assert [f if f != 'banana' else 'orange' for f in afruit] == ['apple', 'orange', 'orange', 'mango']
+
+
+def test_simple_class() -> None:
+    class Student:
+        def __init__(self, name: str):
+            self.name = name
+
+    petra = Student('Petra')
+    assert petra.name == 'Petra'
+
+    class Person:
+        def __init__(self, first_name, last_name) -> None:
+            self.first_name = first_name
+            self.last_name = last_name
+
+        def full_name(self) -> str:
+            return f"{self.first_name} {self.last_name}"
+
+    anders = Person(last_name="Arnholm", first_name="Anders")
+    assert anders.full_name() == "Anders Arnholm"
