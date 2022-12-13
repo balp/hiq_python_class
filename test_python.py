@@ -25,6 +25,7 @@ def test_floats():
     b = 2.0
     c = 1.0
     d = 1e10
+    f = 1.2e10
     e = float("2.3")
     print(a, b, c, d, e)
     assert a < b
@@ -106,7 +107,7 @@ def test_set():
 
 def test_dictionaries():
     assert "hi" in {"hi": "Hej", "Bye": "Hej då"}
-    assert 1234 == {"hi": "Hej", "Bye": "Hej då", "år": 1234}["år"]
+    assert 1234 == {"hi": "Hej", "Bye": "Hej då", "år": 1234, 12: 12}["år"]
     d = {}
     d[10] = 11
     assert d[10] == 11
