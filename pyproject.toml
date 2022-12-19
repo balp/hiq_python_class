@@ -1,0 +1,28 @@
+[build-system]
+requires = ["flit_core>=3.2"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "hiq_python_class_2022_balp"
+# version = "0.0.1"
+authors = [
+  { name="Anders Arnholm", email="anders.arnholm@hiq.se" },
+]
+dynamic = ["version", "description"]
+# description = "A Small Python Class"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: ISC License (ISCL)",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/balp/hiq_python_class"
+"Bug Tracker" = "https://github.com/balp/hiq_python_class/issues"
+
+[tool.flit.module]
+name = "hiq"
+[tool.flit.external-data]
+directory = "aoc_1"

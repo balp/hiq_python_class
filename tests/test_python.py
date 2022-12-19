@@ -219,3 +219,37 @@ def test_simple_class() -> None:
 
     anders = Person(last_name="Arnholm", first_name="Anders")
     assert anders.full_name() == "Anders Arnholm"
+
+
+outside = 1
+one_more = 2
+
+
+def test_scope():
+    inside = 1
+    global outside
+    one_more = 4
+    print(f"{outside}, {inside}, {one_more}")
+    assert one_more == 4
+
+
+def test_scope2():
+    global one_more
+    assert one_more == 2
+
+
+def test_import_module():
+    import hiq.xmas
+    assert hiq.xmas.greeting("Anders") == "God Jul, Anders."
+
+
+def test_from_import():
+    from hiq.xmas import greeting
+    assert greeting("Anders") == "God Jul, Anders."
+
+
+def test_as_import():
+    from hiq.xmas import greeting as julhälsning
+    assert julhälsning("Anders") == "God Jul, Anders."
+
+# Distribution package
