@@ -4,12 +4,10 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "hiq_python_class_2022_balp"
-# version = "0.0.1"
 authors = [
   { name="Anders Arnholm", email="anders.arnholm@hiq.se" },
 ]
 dynamic = ["version", "description"]
-# description = "A Small Python Class"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
